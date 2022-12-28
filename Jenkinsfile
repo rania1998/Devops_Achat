@@ -49,13 +49,13 @@ pipeline {
              }
                 
            }
-   //     stage('nexus deploy') {
-    //        steps{
-        //       sh'mvn deploy  '
+        stage('nexus deploy') {
+            steps{
+               sh'mvn deploy  '
            
-      //    }
+         }
 
-    //   }
+      }
         
 	
        
