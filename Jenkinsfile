@@ -11,23 +11,7 @@ pipeline {
                 }
                 
             }
-       // stage("MVN CLEAN"){
-         //  steps{
-              
-            //   sh 'mvn clean package'
-                             
-            //   }
-                
-          //  }
-  
-       // stage("build"){
-          //  steps{
-              
-              //  sh 'mvn install package'
-                             
-              //  }
-                
-         //   }
+      
 	    
 	      stage('Testing MVN') {
             steps {
@@ -54,13 +38,7 @@ pipeline {
             }
         }
     
-       // stage("SonarQube analysis"){
-         //   steps{
-          //  withSonarQubeEnv('sonarqube-8.9.7') {  
-            //    sh 'mvn sonar:sonar'
-             //  }
-          //   }
-            //}
+      
 	    stage('MVN SONAR ') {
             steps {
                 sh 'mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=sonar'
