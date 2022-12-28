@@ -11,23 +11,42 @@ pipeline {
                 }
                 
             }
-        stage("MVN CLEAN"){
-           steps{
+       // stage("MVN CLEAN"){
+         //  steps{
               
-               sh 'mvn clean package'
+            //   sh 'mvn clean package'
                              
-               }
+            //   }
                 
-            }
+          //  }
   
-        stage("build"){
-            steps{
+       // stage("build"){
+          //  steps{
               
-                sh 'mvn install package'
+              //  sh 'mvn install package'
                              
-                }
+              //  }
                 
+         //   }
+	    
+	      stage('Testing MVN') {
+            steps {
+                sh """mvn -version"""
             }
+        }
+       
+          stage('MVN CLEAN 5SIM3') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+       
+          stage('MVN COMPILE 5SIM3') {
+            steps {
+                sh 'mvn compile'
+            }
+        }
+	    
         stage("UNIT TEST") {
             steps {
                 echo "TESTING project"
