@@ -19,14 +19,7 @@ pipeline {
            //     }
                 
          //   }
-        stage("MVN TEST"){
-            steps{
-              
-                sh 'mvn clean test'
-                             
-                }
-                
-            }
+  
         stage("build"){
             steps{
               
