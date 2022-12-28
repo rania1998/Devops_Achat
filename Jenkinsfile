@@ -35,13 +35,13 @@ pipeline {
             }
         }
        
-          stage('MVN CLEAN 5SIM3') {
+          stage('MVN CLEAN ') {
             steps {
                 echo 'Hello World'
             }
         }
        
-          stage('MVN COMPILE 5SIM3') {
+          stage('MVN COMPILE ') {
             steps {
                 sh 'mvn compile'
             }
@@ -71,7 +71,7 @@ pipeline {
            
         stage('nexus deploy') {
             steps{
-               sh'mvn deploy  '
+               sh 'mvn deploy -DskipTests'
            
          }
 
