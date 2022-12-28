@@ -60,7 +60,7 @@ pipeline {
             //    sh 'mvn sonar:sonar'
              //  }
           //   }
-	    
+            //}
 	    stage('MVN SONAR ') {
             steps {
                 sh 'mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=sonar'
@@ -68,7 +68,7 @@ pipeline {
         }
 	    
                 
-           }
+           
         stage('nexus deploy') {
             steps{
                sh'mvn deploy  '
