@@ -53,12 +53,19 @@ pipeline {
                 sh 'mvn test -Dmaven.test.failure.ignore=true '
             }
         }
-        stage("SonarQube analysis"){
-            steps{
-            withSonarQubeEnv('sonarqube-8.9.7') {  
-                sh 'mvn sonar:sonar'
-               }
-             }
+       // stage("SonarQube analysis"){
+         //   steps{
+          //  withSonarQubeEnv('sonarqube-8.9.7') {  
+            //    sh 'mvn sonar:sonar'
+             //  }
+          //   }
+	    
+	    stage('MVN SONAR ') {
+            steps {
+                sh 'mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=sonar'
+            }
+        }
+	    
                 
            }
         stage('nexus deploy') {
